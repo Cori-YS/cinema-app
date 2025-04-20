@@ -1,2 +1,2 @@
-Tema: Cinema
-Tecnologia: React Native
+#Tema: Cinema
+#Tecnologia: React Native
