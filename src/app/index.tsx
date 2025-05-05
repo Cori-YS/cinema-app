@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { router } from 'expo-router';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Feather } from '@expo/vector-icons';
+import { Feather, FontAwesome } from '@expo/vector-icons';
+import Colors from '@/constants/Colors';
+import DropDown from '@/components/dropDown';
 
 export default function Index() {
   const [name, setName] = useState('');
@@ -13,29 +15,41 @@ export default function Index() {
 
   return (
     <SafeAreaView>
-      <TouchableOpacity>
-        <Text>Escolha o cinema</Text>
-        <Text>
-          Kilamba <Feather name='chevron-down' size={16} />
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Feather name='search' size={20} />
-      </TouchableOpacity>
+      <View style={styles.container}>
+        <DropDown />
+        <View style={styles.buttonRow}>
+          <TouchableOpacity style={styles.button} activeOpacity={0.9}>
+            <Feather name='search' size={20} style={styles.icon} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} activeOpacity={0.9}>
+            <FontAwesome name='user-circle' size={20} style={styles.icon} />
+          </TouchableOpacity>
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 32,
-    justifyContent: 'center',
-    gap: 16,
+    padding: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
-  title: {
-    color: '#453467',
-    fontSize: 24,
-    fontWeight: 'bold',
+  buttonRow: {
+    flexDirection: 'row',
+    gap: 10,
+  },
+  button: {
+    height: 55,
+    width: 55,
+    borderRadius: 12.5,
+    backgroundColor: Colors.dark.tint,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  icon: {
+    color: Colors.dark.text,
+    fontSize: 30,
   },
 });
