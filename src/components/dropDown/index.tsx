@@ -9,7 +9,7 @@ import { styles } from './style';
 
 export default function DropDown(props: TouchableOpacityProps) {
   return (
-    <TouchableOpacity style={styles.dropDown} activeOpacity={0.9} {...props}>
+    <TouchableOpacity style={styles.dropDown} activeOpacity={0.8} {...props}>
       <Text style={styles.dropTitle}>Escolha o cinema</Text>
       <View style={styles.dropContent}>
         <Text style={styles.dropText}>Kilamba</Text>
