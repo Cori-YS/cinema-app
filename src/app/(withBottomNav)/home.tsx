@@ -6,7 +6,7 @@ import LocationBar from '@/components/locationBar';
 import PromotionButton from '@/components/promotionButton';
 import MovieList from '@/components/moviesList';
 
-export default function Index() {
+export default function Home() {
   setBackgroundColorAsync('#000');
 
   return (
@@ -21,7 +21,6 @@ export default function Index() {
           <Text style={styles.title}>Cinemas</Text>
         </TouchableOpacity>
       </View>
-
       <MovieList />
     </SafeAreaView>
   );
