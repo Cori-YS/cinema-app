@@ -1,55 +1,64 @@
-import { useState } from 'react';
-import { router } from 'expo-router';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Feather, FontAwesome } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
-import DropDown from '@/components/dropDown';
+import { setBackgroundColorAsync } from 'expo-system-ui';
+import LocationBar from '@/components/locationBar';
+import PromotionButton from '@/components/promotionButton';
+import MovieList from '@/components/moviesList';
 
 export default function Index() {
-  const [name, setName] = useState('');
-
-  function handleNext() {
-    router.navigate('/dashboard');
-  }
+  setBackgroundColorAsync('#000');
 
   return (
     <SafeAreaView>
+      <LocationBar />
+      <PromotionButton />
       <View style={styles.container}>
-        <DropDown />
-        <View style={styles.buttonRow}>
-          <TouchableOpacity style={styles.button} activeOpacity={0.9}>
-            <Feather name='search' size={20} style={styles.icon} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} activeOpacity={0.9}>
-            <FontAwesome name='user-circle' size={20} style={styles.icon} />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity activeOpacity={0.8} style={styles.selectedButton}>
+          <Text style={styles.selectedTitle}>Serviços</Text>
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.8} style={styles.button}>
+          <Text style={styles.title}>Cinemas</Text>
+        </TouchableOpacity>
       </View>
+
+      <MovieList />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  buttonRow: {
-    flexDirection: 'row',
-    gap: 10,
+    padding: 20,
+    paddingTop: 5,
   },
   button: {
+    backgroundColor: Colors.dark.background,
+    borderRadius: 18,
     height: 55,
-    width: 55,
-    borderRadius: 12.5,
-    backgroundColor: Colors.dark.tint,
-    alignItems: 'center',
+    width: 160,
     justifyContent: 'center',
+    alignItems: 'center',
   },
-  icon: {
+  selectedButton: {
+    backgroundColor: Colors.dark.background,
+    borderRadius: 18,
+    height: 55,
+    width: 160,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: Colors.dark.tint,
+  },
+  title: {
     color: Colors.dark.text,
-    fontSize: 30,
+    fontSize: 20,
+  },
+  selectedTitle: {
+    color: Colors.dark.tint,
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
