@@ -41,7 +41,13 @@ export default function Profile() {
         </TouchableOpacity>
       </View>
 
-      <View style={{ padding: 20, alignItems: 'center', marginTop: 100 }}>
+      <View
+        style={{
+          padding: 20,
+          alignItems: 'center',
+          marginTop: 200,
+        }}
+      >
         <TouchableOpacity
           activeOpacity={0.8}
           style={{

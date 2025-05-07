@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, ActivityIndicator } from 'react-native';
 import { styles } from './style';
 
-const API_KEY = '';
+const API_KEY = process.env.EXPO_PUBLIC_API_KEY;
 const POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 
 type Movie = {
