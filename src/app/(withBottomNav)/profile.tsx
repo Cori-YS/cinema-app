@@ -1,11 +1,6 @@
 import ProfileHeader from '@/components/profileHeader';
 import Colors from '@/constants/Colors';
-import {
-  FontAwesome,
-  Ionicons,
-  MaterialCommunityIcons,
-  Octicons,
-} from '@expo/vector-icons';
+import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -45,7 +40,7 @@ export default function Profile() {
         style={{
           padding: 20,
           alignItems: 'center',
-          marginTop: 200,
+          marginTop: 70,
         }}
       >
         <TouchableOpacity
@@ -108,7 +103,6 @@ const styles = StyleSheet.create({
     marginTop: 40,
     padding: 20,
     alignItems: 'center',
-    flex: 1,
     gap: 15,
   },
   button: {
