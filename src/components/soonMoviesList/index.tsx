@@ -60,7 +60,10 @@ export default function MovieList() {
       keyExtractor={(item) => item.id.toString()}
       renderItem={renderItem}
       numColumns={2}
-      contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 190 }}
+      contentContainerStyle={{
+        paddingHorizontal: 20,
+        paddingBottom: 190,
+      }}
     />
   );
 }

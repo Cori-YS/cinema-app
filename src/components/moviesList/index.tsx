@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Image, ActivityIndicator } from 'react-native';
+import {
+  Text,
+  FlatList,
+  Image,
+  ActivityIndicator,
+  TouchableOpacity,
+} from 'react-native';
+import { router } from 'expo-router';
 import { styles } from './style';
 
 const API_KEY = process.env.EXPO_PUBLIC_API_KEY;
 const POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 
-type Movie = {
+export type Movie = {
   id: string;
   title: string;
-  subtitle: string;
+  original_title: string;
   poster_path: string;
   release_date: string;
+  overview: string;
+  genre_ids: string[];
 };
 
 export default function MovieList() {
@@ -34,8 +43,19 @@ export default function MovieList() {
     fetchMovies();
   }, []);
 
+  const openMovieDetails = (movie: Movie) => {
+    router.push({
+      pathname: '/movie',
+      params: { data: JSON.stringify(movie) },
+    });
+  };
+
   const renderItem = ({ item }: { item: Movie }) => (
-    <View style={styles.card}>
+    <TouchableOpacity
+      style={styles.card}
+      activeOpacity={0.8}
+      onPress={() => openMovieDetails(item)}
+    >
       <Image
         source={{ uri: POSTER_URL + item.poster_path }}
         style={styles.poster}
@@ -47,7 +67,7 @@ export default function MovieList() {
       <Text style={styles.subtitle} numberOfLines={1}>
         {item.release_date}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 
   if (loading) {

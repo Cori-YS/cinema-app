@@ -1,14 +1,11 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Colors from '@/constants/Colors';
-import { setBackgroundColorAsync } from 'expo-system-ui';
 import LocationBar from '@/components/locationBar';
 import PromotionButton from '@/components/promotionButton';
 import MovieList from '@/components/moviesList';
 
 export default function Home() {
-  setBackgroundColorAsync('#000');
-
   return (
     <SafeAreaView>
       <LocationBar />

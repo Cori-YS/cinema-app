@@ -9,9 +9,9 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingVertical: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#161621',
     borderTopWidth: 1,
-    borderTopColor: '#000',
+    borderTopColor: '#161621',
   },
   tab: {
     alignItems: 'center',
