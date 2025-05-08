@@ -20,7 +20,7 @@ export default function MovieList() {
   const fetchMovies = async () => {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=pt&page=1`
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=pt&page=1`
       );
       const json = await res.json();
       setMovies(json.results);

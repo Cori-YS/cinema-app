@@ -4,7 +4,7 @@ import { Movie } from '@/components/moviesList';
 import Colors from '@/constants/Colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
   ImageBackground,
@@ -149,6 +149,7 @@ export default function MovieDetails() {
             bottom: 20,
             left: 90,
           }}
+          onPress={() => router.navigate('/reserve')}
         >
           <Text
             style={{
