@@ -1,4 +1,5 @@
 import BackButton from '@/components/backButton';
+import CastList from '@/components/castList';
 import { Movie } from '@/components/moviesList';
 import Colors from '@/constants/Colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -79,7 +80,7 @@ export default function MovieDetails() {
               color: Colors.dark.tint,
               fontSize: 28,
               fontWeight: 'bold',
-              marginTop: 20,
+              marginTop: 0,
             }}
           >
             {movie.title}
@@ -111,6 +112,9 @@ export default function MovieDetails() {
               </Text>
             ))}
           </View>
+
+          <CastList movie_id={movie.id} />
+
           <View
             style={{
               alignItems: 'center',
@@ -128,6 +132,7 @@ export default function MovieDetails() {
             </Text>
           </View>
         </View>
+
         <TouchableOpacity
           activeOpacity={0.8}
           style={{
@@ -198,7 +203,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
-    top: 310,
+    top: 300,
     right: 50,
     flexDirection: 'row',
     gap: 10,
