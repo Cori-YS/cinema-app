@@ -48,7 +48,11 @@ export default function SeatSelector() {
     );
   };
 
-  const renderSeat = ({ item }) => (
+  const renderSeat = ({
+    item,
+  }: {
+    item: { id: string; status: string; col: number };
+  }) => (
     <TouchableOpacity
       onPress={() => toggleSeat(item.id)}
       disabled={item.status === seatStates.RESERVED}
