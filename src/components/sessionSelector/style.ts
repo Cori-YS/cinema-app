@@ -37,4 +37,14 @@ export const styles = StyleSheet.create({
     fontSize: 19.3,
     fontWeight: 'bold',
   },
+  sessionsContainer: { flexDirection: 'row', margin: 10, gap: 5 },
+  sessionButton: {
+    backgroundColor: '#4A4B56',
+    borderRadius: 13.5,
+    height: 22,
+    width: 70,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  session: { color: Colors.dark.text, fontSize: 13, fontWeight: 'medium' },
 });

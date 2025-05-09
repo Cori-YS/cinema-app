@@ -44,7 +44,7 @@ export default function MovieList() {
   }, []);
 
   const openMovieDetails = (movie: Movie) => {
-    router.push({
+    router.navigate({
       pathname: '/movie',
       params: { data: JSON.stringify(movie) },
     });
