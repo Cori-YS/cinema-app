@@ -29,6 +29,13 @@ export default function MovieDetails() {
   const [genres, setGenres] = useState<Genre[]>([]);
   const movie: Movie = JSON.parse(data as string);
 
+  const openReserve = (movie: Movie) => {
+    router.navigate({
+      pathname: '/reserve',
+      params: { data: JSON.stringify(movie) },
+    });
+  };
+
   const fetchGenres = async () => {
     try {
       const res = await fetch(
@@ -47,8 +54,8 @@ export default function MovieDetails() {
 
   return (
     <>
-      <StatusBar barStyle='light-content' backgroundColor='#161621' />
       <SafeAreaView style={{ flex: 1 }}>
+        <StatusBar barStyle='light-content' backgroundColor='#161621' />
         <ImageBackground
           source={{ uri: POSTER_URL + movie.poster_path }}
           style={styles.image}
@@ -149,7 +156,7 @@ export default function MovieDetails() {
             bottom: 20,
             left: 90,
           }}
-          onPress={() => router.navigate('/reserve')}
+          onPress={() => openReserve(movie)}
         >
           <Text
             style={{
@@ -176,8 +183,7 @@ export default function MovieDetails() {
 const styles = StyleSheet.create({
   image: {
     height: 350,
-    justifyContent: 'flex-end',
-    marginTop: 10,
+    marginBottom: 15,
   },
   content: {
     padding: 20,
