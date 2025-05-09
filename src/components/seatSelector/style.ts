@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    paddingTop: 40,
-    paddingBottom: 40,
+    paddingTop: 25,
+    paddingBottom: 25,
     backgroundColor: Colors.dark.background,
     justifyContent: 'center',
     borderRadius: 23.71,
@@ -60,6 +60,6 @@ export const styles = StyleSheet.create({
   },
   legendText: {
     fontSize: 12,
-    color: '#fff',
+    color: Colors.dark.text,
   },
 });

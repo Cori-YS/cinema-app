@@ -1,5 +1,6 @@
 import BackButton from '@/components/backButton';
 import SeatSelector from '@/components/seatSelector';
+import SessionSelector from '@/components/sessionSelector';
 import Colors from '@/constants/Colors';
 import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -12,7 +13,7 @@ export default function Reserve() {
         style={{
           alignItems: 'center',
           height: 90,
-          paddingTop: 50,
+          paddingTop: 40,
         }}
       >
         <Text
@@ -25,7 +26,10 @@ export default function Reserve() {
           Selecione a data
         </Text>
       </View>
+
       <SeatSelector />
+
+      <SessionSelector />
     </SafeAreaView>
   );
 }
