@@ -1,10 +1,17 @@
 import BackButton from '@/components/backButton';
 import MovieOverview from '@/components/movieOverview';
 import { Movie } from '@/components/moviesList';
+import PayMethodSelector from '@/components/payMethodSelector';
 import Colors from '@/constants/Colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useLocalSearchParams } from 'expo-router';
-import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 export default function Pay() {
   const { data } = useLocalSearchParams();
@@ -12,6 +19,7 @@ export default function Pay() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar barStyle='light-content' backgroundColor='#161621' />
       <BackButton />
 
       <View
@@ -33,6 +41,8 @@ export default function Pay() {
       </View>
 
       <MovieOverview movie={movie} />
+
+      <PayMethodSelector />
 
       <TouchableOpacity
         activeOpacity={0.8}
