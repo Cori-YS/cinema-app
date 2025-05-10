@@ -1,9 +1,15 @@
 import BackButton from '@/components/backButton';
+import MovieOverview from '@/components/movieOverview';
+import { Movie } from '@/components/moviesList';
 import Colors from '@/constants/Colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useLocalSearchParams } from 'expo-router';
 import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 
 export default function Pay() {
+  const { data } = useLocalSearchParams();
+  const { movie }: { movie: Movie } = JSON.parse(data as string);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <BackButton />
@@ -25,6 +31,8 @@ export default function Pay() {
           Comprar
         </Text>
       </View>
+
+      <MovieOverview movie={movie} />
 
       <TouchableOpacity
         activeOpacity={0.8}

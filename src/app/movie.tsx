@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-type Genre = {
+export type Genre = {
   id: string;
   name: string;
 };
