@@ -5,14 +5,13 @@ import { styles } from './style';
 import Colors from '@/constants/Colors';
 
 type Tabs = {
-  name: '/home' | '/soon' | '/profile';
+  name: '/' | '/soon' | '/profile';
   label: string;
   icon: 'home' | 'film-outline' | 'person';
-  alternativeName?: string;
 };
 
 const tabs: Tabs[] = [
-  { name: '/home', label: 'Home', icon: 'home', alternativeName: '/' },
+  { name: '/', label: 'Home', icon: 'home' },
   { name: '/soon', label: 'Brevemente', icon: 'film-outline' },
   { name: '/profile', label: 'Perfil', icon: 'person' },
 ];
@@ -28,18 +27,11 @@ export default function BottomNav() {
             <Ionicons
               name={tab.icon}
               size={24}
-              color={
-                pathname === tab.name || pathname === tab.alternativeName
-                  ? Colors.dark.tint
-                  : 'gray'
-              }
+              color={pathname === tab.name ? Colors.dark.tint : 'gray'}
             />
             <Text
               style={{
-                color:
-                  pathname === tab.name || pathname === tab.alternativeName
-                    ? Colors.dark.tint
-                    : 'gray',
+                color: pathname === tab.name ? Colors.dark.tint : 'gray',
                 fontSize: 12,
               }}
             >

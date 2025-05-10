@@ -4,7 +4,7 @@ import { Movie } from '@/components/moviesList';
 import PayMethodSelector from '@/components/payMethodSelector';
 import Colors from '@/constants/Colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import {
   SafeAreaView,
   StatusBar,
@@ -60,6 +60,7 @@ export default function Pay() {
           bottom: 20,
           left: 40,
         }}
+        onPress={() => router.navigate('/invoice')}
       >
         <Text
           style={{
